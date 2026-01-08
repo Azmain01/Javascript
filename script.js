@@ -1,20 +1,41 @@
-const countDisplay = document.getElementById("count") ;
-const increaseBtn = document.getElementById("increase") ;
-const decreaseBtn = document.getElementById("decrease") ;
-const resetBtn = document.getElementById("reset") ;
-let count = 0 ;
+const box = document.getElementById('box')
+const count = document.getElementById('count')
+const resetBtn = document.getElementById('resetBtn')
 
-increaseBtn.addEventListener("click",function(){
-    count++;
-    countDisplay.textContent = count ;
+let clickCount = 0
+
+box.addEventListener('click', () => {
+    clickCount++;
+    box.style.background = 'lightgreen';
+    box.textContent = 'clicked';
+    count.textContent = clickCount;
 });
 
-decreaseBtn.addEventListener("click",function(){
-    count--;
-    countDisplay.textContent = count ;
+box.addEventListener('dblclick', () => {
+    box.style.background = 'orange';
+    box.textContent = 'Double Clicked';
 });
 
-resetBtn.addEventListener("click",function(){
-    count=0;
-    countDisplay.textContent = count ;
+box.addEventListener('mouseover', () => {
+    box.style.background = 'red';
+    box.textContent = 'Mouse Over';
+});
+
+box.addEventListener('mouseout', () => {
+    box.style.background = 'lightgray';
+    box.textContent = 'Mouse Out';
+});
+
+box.addEventListener('keydown', (event) => {
+    if (event.key == 'Enter') {
+    box.style.background = 'skyblue';
+    box.textContent = 'Keyboard Activated';
+    }
+});
+
+resetBtn.addEventListener('click', () => {
+    clickCount = 0;
+    box.style.background = 'lightgray';
+    box.textContent = ' Hover or click me';
+    count.textContent = 0;
 });
