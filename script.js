@@ -1,41 +1,29 @@
 const box = document.getElementById('box')
-const count = document.getElementById('count')
-const resetBtn = document.getElementById('resetBtn')
 
-let clickCount = 0
+function changeColor(color) {
+    box.style.background = color
+}
 
-box.addEventListener('click', () => {
-    clickCount++;
-    box.style.background = 'lightgreen';
-    box.textContent = 'clicked';
-    count.textContent = clickCount;
-});
+function changeSize() {
+    box.style.width = '400px'
+    box.style.height= '200px'
+}
 
-box.addEventListener('dblclick', () => {
-    box.style.background = 'orange';
-    box.textContent = 'Double Clicked';
-});
+function makeRound() {
+    box.style.borderRadius= '50px' ;
+}
 
-box.addEventListener('mouseover', () => {
-    box.style.background = 'red';
-    box.textContent = 'Mouse Over';
-});
+function makeCircle() {
+    box.style.borderRadius = '50%'
+    box.style.width = '200px'
+    box.style.height= '200px'
+}
 
-box.addEventListener('mouseout', () => {
-    box.style.background = 'lightgray';
-    box.textContent = 'Mouse Out';
-});
 
-box.addEventListener('keydown', (event) => {
-    if (event.key == 'Enter') {
-    box.style.background = 'skyblue';
-    box.textContent = 'Keyboard Activated';
-    }
-});
-
-resetBtn.addEventListener('click', () => {
-    clickCount = 0;
-    box.style.background = 'lightgray';
-    box.textContent = ' Hover or click me';
-    count.textContent = 0;
-});
+function resetBox() {
+    box.style.borderRadius = '50%'
+    box.style.width = '300px'
+    box.style.height= '150px'
+    box.style.borderRadius= '10px'
+    box.style.background = '#4da3ff'
+}

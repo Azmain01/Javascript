@@ -3,55 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Handing</title>
+    <title>Changing the CSS properties of HTML tags</title>
+    
     <style>
-    body {
-        font-family: Arial,  sans-serif;
-        padding: 40px;
-    }
+        body {
 
-    #box {
-        width: 180px;
-        height: 180px;
-        background: lightgray;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        cursor: pointer;
-        user-select: none;
-        border-radius: 12px;
-        transition: all 0.3s ease;
-        outline: none;
-    }
+font-family: Arial, sans-serif;
 
-    #box:focus {
-        box-shadow: 0 0 0 3px #4caf50;
-    }
+background: #f4f6fa;
 
-    #info {
-        margin-top: 20px;
-        font-size: 16px;
-    }
+padding: 40px;
 
-    button {
-        margin-top: 15px;
-        padding: 8px 14px;
-        cursor: pointer;
-    }
+}
+
+.container {
+
+max-width: 900px;
+
+margin: auto;
+
+}
+
+h1 {
+
+text-align: center;
+
+margin-bottom: 20px;
+
+}
+
+.demo-box {
+
+width: 300px;
+
+height: 150px;
+
+background: #4da3ff;
+
+color: white;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+margin: 20px auto;
+
+border-radius: 10px;
+
+transition: all 0.4s ease;
+
+}
+
+.controls {
+
+background: #ffffff;
+
+padding: 20px;
+
+border-radius: 10px;
+
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+margin-top: 30px;
+
+}
+
+button {
+
+padding: 10px 20px;
+
+margin: 10px;
+
+border: none;
+
+border-radius: 6px;
+
+cursor: pointer;
+
+}
+
+.btn-red {
+
+background: #e63946;
+
+color: white;
+
+}
+
+.btn-green {
+
+background: #2a9d8f;
+
+color: white;
+
+}
+
+.btn-size {
+
+background: #264653;
+
+color: white;
+
+}
+
+.btn-round {
+
+background: #1d3557;
+
+color: white;
+
+}
+
+.btn-circle {
+
+background: #0855c2;
+
+color: white;
+
+}
+
+.btn-reset {
+
+background: #6c757d;
+
+color: white;
+}
     </style>
 </head>
 <body>
-    <div id="box" tabindex="0">
-        Hover or click me
-    </div>
- 
-    <div id="info">
-        Total clicks : <strong id="count">0</strong>   
-    </div>
+    <div class="container">
+        <h1>Change the CSS properties with Javascript</h1>
+        <div class="demo-box" id="box">Demo box</div>
+        <div class="Controls">
+            <h2>Controls</h2>
+            <button class="btn-red" onclick="changeColor('red')">Make Red</button>
 
-   
-    <button id="resetBtn">Reset</button>
+            <button class="btn-green" onclick="changeColor('green')">Make green</button>
+
+            <button class="btn-size" onclick="changeSize()">Increase Size</button>
+
+            <button class="btn-round" onclick="makeRound()">Make Round</button>
+
+            <button class="btn-circle" onclick="makeCircle()">Make Circle</button>
+
+            <button class="btn-reset" onclick="resetBox()"> Reset</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
