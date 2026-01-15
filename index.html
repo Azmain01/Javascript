@@ -3,155 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Changing the CSS properties of HTML tags</title>
-    
-    <style>
-        body {
-
-font-family: Arial, sans-serif;
-
-background: #f4f6fa;
-
-padding: 40px;
-
-}
-
-.container {
-
-max-width: 900px;
-
-margin: auto;
-
-}
-
-h1 {
-
-text-align: center;
-
-margin-bottom: 20px;
-
-}
-
-.demo-box {
-
-width: 300px;
-
-height: 150px;
-
-background: #4da3ff;
-
-color: white;
-
-display: flex;
-
-align-items: center;
-
-justify-content: center;
-
-margin: 20px auto;
-
-border-radius: 10px;
-
-transition: all 0.4s ease;
-
-}
-
-.controls {
-
-background: #ffffff;
-
-padding: 20px;
-
-border-radius: 10px;
-
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-margin-top: 30px;
-
-}
-
-button {
-
-padding: 10px 20px;
-
-margin: 10px;
-
-border: none;
-
-border-radius: 6px;
-
-cursor: pointer;
-
-}
-
-.btn-red {
-
-background: #e63946;
-
-color: white;
-
-}
-
-.btn-green {
-
-background: #2a9d8f;
-
-color: white;
-
-}
-
-.btn-size {
-
-background: #264653;
-
-color: white;
-
-}
-
-.btn-round {
-
-background: #1d3557;
-
-color: white;
-
-}
-
-.btn-circle {
-
-background: #0855c2;
-
-color: white;
-
-}
-
-.btn-reset {
-
-background: #6c757d;
-
-color: white;
-}
-    </style>
+    <title>LogNinga.com - Login</LogNinga></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.png" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <h1>Change the CSS properties with Javascript</h1>
-        <div class="demo-box" id="box">Demo box</div>
-        <div class="Controls">
-            <h2>Controls</h2>
-            <button class="btn-red" onclick="changeColor('red')">Make Red</button>
+    <div class="auth-card">
+        <div class="form-container">
+            <h2 class="top-head">LogNinga Login</h2>
 
-            <button class="btn-green" onclick="changeColor('green')">Make green</button>
+            <div class="form-group">
+                <input type="email" id="loginEmail" placeholder="Email">
+            </div>
 
-            <button class="btn-size" onclick="changeSize()">Increase Size</button>
+            <div class="form-group password-wrap"
+            ><input type="password" id="loginPassword" placeholder="Password">
+        <i class="fa-solid fa-eye" id="loginToggle"></i></div>
 
-            <button class="btn-round" onclick="makeRound()">Make Round</button>
+        <button id="loginBtn" class="btn-primary">Login</button>
 
-            <button class="btn-circle" onclick="makeCircle()">Make Circle</button>
-
-            <button class="btn-reset" onclick="resetBox()"> Reset</button>
+        <p class="switch-link">
+            Don't have an account? <a href="singup.html">Register</a>
+        </p>
         </div>
+
     </div>
 
-    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/2c2c3a511e.js" crossorigin="anonymous"></script>
+    <script src="toast.js"></script>
+    <script src="auth.js"></script>
 </body>
 </html>
