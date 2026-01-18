@@ -21,6 +21,33 @@
             <h2>User Profile</h2>
             <p><strong>Name:</strong> <span id="userName"></span></p>           <p><strong>Email:</strong> <span id="user-Email"></span></p>
         </section>
+
+        <section class="password-card">
+            <h2>Change Password</h2>
+            <input type="password" id="newPassword" placeholder="New Password">
+            <input type="password" placeholder="Confirm Password" id="confirmPassword"> 
+            <button id="changePassBtn" class="btn-primary">Update Password</button>
+        </section>
+
+        <section class="info-grid">
+            <div class="info-box">
+                <h3>Account Status</h3>
+                <p>Active</p>
+            </div>
+            <div class="info-box">
+                <h3>Security Level</h3>
+                <p>Standerd</p>
+            </div>
+            <div class="info-box">
+                <h3>Last Login</h3>
+                <p>Today</p>
+            </div>
+        </section>
     </main>
-</body>
+
+    <footer class="dash-footer">@ LogNinja.com</footer>
+
+    <script src="toast.js"></script>
+    <script src="auth.js"></script>
+</body> 
 </html>
