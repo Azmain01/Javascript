@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LogNinja Dashboard</title>
     <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="login.png" type="image/x-icon">
+    <link rel="stylesheet" href="login.png" type="image/x-icon">
 </head>
+
 <body class="
     dashboard-body">
     <header class="dash-header">
@@ -14,18 +16,19 @@
 
         <button id="loguotBtn" class="btn-danger">Logout</button>
     </header>
-    
+
     <main class="dashboard-wrapper">
 
         <section class="profile-card">
             <h2>User Profile</h2>
-            <p><strong>Name:</strong> <span id="userName"></span></p>           <p><strong>Email:</strong> <span id="user-Email"></span></p>
+            <p><strong>Name:</strong> <span id="userName"></span></p>
+            <p><strong>Email:</strong> <span id="user-Email"></span></p>
         </section>
 
         <section class="password-card">
             <h2>Change Password</h2>
             <input type="password" id="newPassword" placeholder="New Password">
-            <input type="password" placeholder="Confirm Password" id="confirmPassword"> 
+            <input type="password" placeholder="Confirm Password" id="confirmPassword">
             <button id="changePassBtn" class="btn-primary">Update Password</button>
         </section>
 
@@ -49,5 +52,6 @@
 
     <script src="toast.js"></script>
     <script src="auth.js"></script>
-</body> 
+</body>
+
 </html>
