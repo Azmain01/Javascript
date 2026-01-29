@@ -1,5 +1,5 @@
-function getUser() {
-    return JSON.parse(localStorage.getitem("users") || "[]" );
+function getUsers() {
+    return JSON.parse(localStorage.getItem("users") || "[]" );
 }
 
 function saveUsers(users) {
@@ -7,18 +7,18 @@ function saveUsers(users) {
 }
 
 function getLoggedUser() {
-    return JSON.parse(localStorage.getitem("LoggedUser"));
+    return JSON.parse(localStorage.getItem("LoggedUser"));
 }
 
 function isValidPassword(password) {
-    return password.lenght >= 6;
+    return password.length >= 6;
 }
 
 document.addEventListener("click", e => {
     if (e.target.classList.contains("toggle-eye")) {
         const input = e.target.previousElementSibling;
 
-        input.type = input.type === "password"  ? "text" : "passowrd";
+        input.type = input.type === "password"  ? "text" : "password";
         e.target.classList.toggle("fa-eye");
         e.target.classList.toggle("fa-eye-slash");
     }
@@ -34,13 +34,13 @@ if (signupBtn) {
 
         const name = nameEl.value.trim();
         const email = emailEl.value.trim();
-        const passowrd = passwordEl.value.trim();
+        const password = passwordEl.value.trim();
 
-        if (!name || !email || !passowrd) 
+        if (!name || !email || !password) 
             return showToast("All fields are required");
 
 
-        if (!isValidPassword(passowrd))
+        if (!isValidPassword(password))
             return showToast("Password must be at least 6 characters");
 
         const users = getUsers();
@@ -48,7 +48,7 @@ if (signupBtn) {
         if (users.some(u => u.email === email))
             return showToast("Email already registered")
 
-        users.push({ name, email, passowrd });
+        users.push({ name, email, password });
         saveUsers(users);
 
         showToast("Account created succesfully", "success");
@@ -63,14 +63,14 @@ const loginBtn = document.getElementById("loginBtn") ;
 
 if (loginBtn)  {
     loginBtn.onclick = () => {
-    const email = document.getElementById("loginBtn").value.trim();
-     const passowrd = document.getElementById("loginPassword").value.trim();
+    const email = document.getElementById("loginEmail").value.trim();
+     const password = document.getElementById("loginPassword").value.trim();
 
-     if (!email || !passowrd)
+     if (!email || !password)
         return showToast("Email and password required")
 
      const users = getUsers();
-     const user = users.find(u => u.email === email && u.passowrd === passowrd)
+     const user = users.find(u => u.email === email && u.password === password)
 
      if (!user)
         return showToast("Invalid login credentials")
@@ -78,7 +78,7 @@ if (loginBtn)  {
      localStorage.setItem("LoggedUser",JSON.stringify(user))
      showToast("Login succesful","success")
 
-     setTimeout(() => location.herf = "dashboard.html", 800)
+     setTimeout(() => location.href = "dashboard.html", 800)
     }
 }
 
@@ -121,7 +121,7 @@ if (changePassBtn)  {
         if (newPassword !== confirmPassword)
             return showToast("Passwords do not match")
 
-        const LoggedUser = getLoggedUser();
+        const loggedUser = getLoggedUser();
         if (!loggedUser)
             return showToast("Session expired. Please login again.")
 
@@ -149,6 +149,6 @@ const logoutBtn = document.getElementById("logoutBtn")
 if (logoutBtn) {
     logoutBtn.onclick = () => {
         localStorage.removeItem("loggedUser");
-        location.herf = "index.html";
+        location.href = "index.html";
     }
 }
